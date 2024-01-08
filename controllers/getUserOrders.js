@@ -25,8 +25,8 @@ const getUserOrders = async (req, res)=>  {
     }
     function orderSum(orders) {
         orders.forEach(order => {
+            let orderSum = 0;
                 order.orderProduct.forEach(product => {
-                    let orderSum = 0;
                     const amount = product.amount;
                     const price = parseFloat(product.product.price);
                     if (amount && price) {
